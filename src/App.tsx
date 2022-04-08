@@ -1,17 +1,30 @@
-// style
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+import { BookList, Header, SearchForm } from 'components';
 
-const ResetStyle = createGlobalStyle`
-  ${reset}
+import styled from 'styled-components';
+import 'antd/dist/antd.min.css';
+import './App.css';
+
+import { observer } from 'mobx-react';
+
+const StyledApp = styled.div`
+  #content {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    padding: 32px 0 80px;
+  }
 `;
 
 const App = () => {
   return (
-    <div className='App'>
-      <ResetStyle />
-    </div>
+    <StyledApp className='App'>
+      <Header />
+      <SearchForm />
+      <div id='content'>
+        <BookList />
+      </div>
+    </StyledApp>
   );
 };
 
-export default App;
+export default observer(App);

@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "experimentalDecorators": true,
+    "target": "esnext",
+    "types": ["react/next", "react-dom/next"],
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "rootDir": "./src",
+    "baseUrl": "src",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
